@@ -375,11 +375,6 @@ if __name__ == "__main__":
     if "redraft" in sys.argv:
         update_redraft = True
 
-    # optionally, also update google sheet ktc database
-    update_database = False
-    if "database" in sys.argv:
-        update_database = True
-
     # pull all player and pick values
     players = scrape_ktc(scrape_redraft=update_redraft)
 
