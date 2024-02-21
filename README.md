@@ -8,3 +8,5 @@ To run this on your own (with full google sheets compatability) you need a few t
 4. A json file with credentials, to authorize access to the google sheet. Info on how to set this up is online, and ChatGPT is quite good at this stuff if you have more questions and can't reach me.
 
 Fill in your sheets key, credentials, give your api google account edit access, and it should be pretty plug-and-play--everything you need to edit is in the "main" method all the way at the bottom of the file.
+
+For any questions or issues, please dm kyle pitts' burner @pitts_burner on twitter (X), or u/325xi5mt on reddit.
