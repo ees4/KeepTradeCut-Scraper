@@ -4,7 +4,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from tqdm import tqdm
 import sys,time,random
-from datetime import date
+from datetime import date, datetime
 import csv
 
 """
@@ -148,11 +148,14 @@ def scrape_ktc(scrape_redraft = False):
 """
 Given a scraped player value list, uploads those values to the appropriate sheet
 using the appropriate league settings.
+
+format: 'SF' or '1QB'
+tep: 0 for no TEP, 1 for TE+, 2 for TE++, and 3 for TE+++
 """
 def export_to_csv(players, format='1QB', tep=0):
     # Modify data for the league's settings
     if format == '1QB':
-        header = ["Player Name", "Position Rank", "Position", "Team", "Value", "Age", "Rookie", "SFPosition Rank", "SFValue", "RdrftPosition Rank", "RdrftValue"]
+        header = [f"Updated {date.today().strftime('%m/%d/%y')} at {datetime.now().strftime('%I:%M%p').lower()}", "Position Rank", "Position", "Team", "Value", "Age", "Rookie", "SFPosition Rank", "SFValue", "RdrftPosition Rank", "RdrftValue"]
         # Add player data to the rows database
         rows_data = [[
             player["Player Name"],
@@ -171,7 +174,7 @@ def export_to_csv(players, format='1QB', tep=0):
         rows_data.insert(0, header)
 
     elif format == 'SF':
-        header = ["Player Name", "Position Rank", "Position", "Team", "Value", "Age", "Rookie", "1QBPosition Rank", "1QBValue", "RdrftPosition Rank", "RdrftValue"]
+        header = [f"Updated {date.today().strftime('%m/%d/%y')} at {datetime.now().strftime('%I:%M%p').lower()}", "Position Rank", "Position", "Team", "Value", "Age", "Rookie", "1QBPosition Rank", "1QBValue", "RdrftPosition Rank", "RdrftValue"]
         # Add player data to the rows database
         rows_data = [[
             player["Player Name"],
