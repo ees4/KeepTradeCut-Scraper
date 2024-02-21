@@ -1,4 +1,6 @@
 # KeepTradeCut-Scraper
+** NOTE: I've added a file that simply exports it to a file locally named ktc.csv, if the whole google sheets upload is too complex. **
+
 A python program to scrape the keeptradecut website and upload data to a google sheet.
 
 To run this on your own (with full google sheets compatability) you need a few things:
