@@ -4,7 +4,7 @@
 To do this:
 1. Download ktc_to_csv.py
 2. Edit the inputs in the main method to match your league settings (change the line: export_to_csv(players, format='1QB', tep=0) to match your format and tep level)
-3. Type: python3 ktc_to_csv.py into your "terminal" from the same directory as ktc_to_csv.py is located in.
+3. Type: python3 ktc_to_csv.py into your "terminal" from the same directory as ktc_to_csv.py is in.
 
 # Export to a google sheet (more difficult):
 To run this on your own (with full google sheets compatability) you need a few things:
